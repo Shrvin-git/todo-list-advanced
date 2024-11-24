@@ -1,0 +1,25 @@
+function todoListGenerator(todoName, isImportant) {
+
+    if (isImportant) {
+        importantTodos.insertAdjacentHTML('beforeend',
+            '')
+    }
+
+}
+
+
+
+// Add todo
+addTodoBtn.addEventListener('click', () => {
+
+    let todoTitle = todoInput.value.trim()
+    const isImportant = prioritySelect.value === 'important'
+
+    if (!todoTitle) {
+        alert('لطفا ورودی هارا تکمیل کنید')
+        return;
+    }
+
+    todoListGenerator(todoTitle, isImportant)
+    todoTitle.value = ''
+});

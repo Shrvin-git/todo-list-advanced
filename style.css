@@ -1,0 +1,249 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: #e0e5ec;
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 7px 7px 15px #b9b9b9, -7px -7px 15px #ffffff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.timer_wrapper {
+    background-color: rgb(255 142 142);
+    border-radius: 13px;
+    box-shadow: 3px 3px 6px #b9b9b9, -3px -3px 6px #ffffff;
+}
+
+.set_timer {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px #b9b9b9, -3px -3px 6px #ffffff;
+}
+
+#addTodoBtn {
+    margin-right: 0;
+}
+
+/* Add Todo Section */
+.add-todo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-todo-section input,
+.add-todo-section select,
+.add-todo-section button {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+    margin-right: 10px;
+    box-shadow: inset 3px 3px 6px #b9b9b9, inset -3px -3px 6px #ffffff;
+}
+
+.active-toggle {
+    text-decoration: line-through;
+}
+
+.todo-list-bgColor {
+    background-color: #8effda !important;
+}
+
+.span-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.column1 {
+    background-color: pink !important;
+}
+
+.column2 {
+    background-color: powderblue !important;
+}
+
+.add-todo-section button {
+    background: #e0e5ec;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 3px 6px #b9b9b9, -3px -3px 6px #ffffff;
+}
+
+.add-todo-section button:hover {
+    box-shadow: 3px 3px 6px #ffffff, -3px -3px 6px #b9b9b9;
+}
+
+/* Todo Columns */
+.todo-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    background: #e0e5ec;
+    flex: 1;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 7px 7px 15px #b9b9b9, -7px -7px 15px #ffffff;
+}
+
+.column h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* Todo List */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    background: #e0e5ec;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 6px #b9b9b9, -3px -3px 6px #ffffff;
+}
+
+.todo-item.done {
+    background: #d4f7d4;
+    text-decoration: line-through;
+}
+
+/* Buttons */
+button {
+    background: #e0e5ec;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px #b9b9b9, -3px -3px 6px #ffffff;
+}
+
+button:hover {
+    box-shadow: 3px 3px 6px #ffffff, -3px -3px 6px #b9b9b9;
+}
+
+.btns_Wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+/* Timer Input */
+.timer-input {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Clear Column Button */
+.clear-column {
+    margin-top: 10px;
+}
+
+/* Media Query for Mobile (Responsive Design) */
+@media (max-width: 450px) {
+
+    /* Container */
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Header */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Add Todo Section */
+    .add-todo-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-todo-section input,
+    .add-todo-section select,
+    .add-todo-section button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+        margin-right: 0;
+    }
+
+    /* Todo Columns */
+    .todo-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .column {
+        padding: 10px;
+    }
+
+    .column h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Todo Items */
+    .todo-item {
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .todo-item button {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Clear Column Button */
+    .clear-column {
+        width: 100%;
+        text-align: center;
+    }
+}

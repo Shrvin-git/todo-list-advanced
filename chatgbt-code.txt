@@ -1,0 +1,42 @@
+// گرفتن تایم سیستم کاربر
+const systemTime = new Date(); // زمان فعلی سیستم
+const currentHours = systemTime.getHours();
+const currentMinutes = systemTime.getMinutes();
+
+// ورودی کاربر (این مقدار را می‌توان از اینپوت HTML دریافت کرد)
+const userTime = "11:29"; // مقدار نمونه برای آزمایش
+var userHours = parseInt(userTime.split(":")[0], 10);
+var userMinutes = parseInt(userTime.split(":")[1], 10);
+
+// محاسبه اختلاف زمانی بین تایم فعلی سیستم و تایم ورودی
+var remainingSeconds =
+  (userHours * 3600 + userMinutes * 60) -
+  (currentHours * 3600 + currentMinutes * 60);
+
+console.log(remainingSeconds);
+// بررسی اگر زمان قبلاً گذشته باشد
+if (remainingSeconds <= 0) {
+  alert("زمان ورودی قبلاً گذشته است!");
+} else {
+  // شمارش معکوس با استفاده از setInterval
+  var countdown = setInterval(function () {
+    if (remainingSeconds <= 0) {
+      clearInterval(countdown); // متوقف کردن تایمر
+      alert("زمان به پایان رسید!"); // پیام به کاربر
+    } else {
+      remainingSeconds--; // کاهش ثانیه‌ها
+
+      // تبدیل ثانیه‌ها به ساعت، دقیقه و ثانیه
+      var hours = Math.floor(remainingSeconds / 3600);
+      var minutes = Math.floor((remainingSeconds % 3600) / 60);
+      var seconds = remainingSeconds % 60;
+
+      // نمایش زمان باقی‌مانده
+      console.log(
+        (hours < 10 ? "0" : "") + hours + ":" +
+        (minutes < 10 ? "0" : "") + minutes + ":" +
+        (seconds < 10 ? "0" : "") + seconds
+      );
+    }
+  }, 1000); // اجرا هر ۱۰۰۰ میلی‌ثانیه
+}
